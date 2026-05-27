@@ -1,4 +1,4 @@
-# 🏍️ MOTOGO
+# MOTOGO
 
 ## Descripción
 
@@ -54,29 +54,6 @@ El sistema permite a los usuarios realizar pedidos, gestionar productos, coordin
 
 ---
 
-# Arquitectura del Proyecto
-
-```text
-MOTOGO
-│
-├── docs/
-│   ├── requisitos/
-│   ├── planificacion/
-│   ├── diagramas/
-│   └── presentaciones/
-│
-├── src/
-│
-├── tests/
-│
-├── .github/
-│
-├── README.md
-├── LICENSE
-└── CONTRIBUTING.md
-```
-
----
 
 # Documentación
 
@@ -103,22 +80,13 @@ docs/
 ### Diagramas
 
 - Casos de uso
-- Diagramas de clases
-- Modelo entidad-relación
-- Diagramas UML
 
 ### Presentaciones
 
 - Material de sustentación
-- Avances del proyecto
 
 ---
 
-# Metodología de Trabajo
-
-El proyecto utiliza una estrategia basada en Git Flow simplificado.
-
-## Ramas principales
 
 ### main
 
@@ -132,65 +100,27 @@ Contiene la integración de funcionalidades en desarrollo.
 
 Contiene funcionalidades específicas desarrolladas por cada integrante.
 
-Ejemplos:
-
-```text
-feature/authentication
-feature/database-design
-feature/frontend-structure
-feature/order-management
-```
-
 ---
 
-# Convención de Commits
-
-Se utiliza Conventional Commits.
-
-## Ejemplos
-
-```bash
-feat: add authentication module
-fix: solve login validation issue
-docs: update IEEE 830 documentation
-refactor: improve database architecture
-test: add user service tests
-```
-
----
-
-# Tecnologías
-
-Tecnologías previstas para el desarrollo:
-
-- Backend
-- Frontend
-- Base de Datos
-- APIs REST
-- UML
-- Git y GitHub
-
-Las tecnologías específicas serán definidas durante la fase de diseño y construcción.
-
----
 
 # Estado del Proyecto
 
-🚧 En fase de análisis y diseño.
+En fase de análisis y diseño.
 
 Actualmente se están desarrollando:
 
-- Documentación de requisitos.
 - Diagramas UML.
 - Modelado de base de datos.
 - Planificación del proyecto.
-- Arquitectura del sistema.
 
 ---
 
 # Equipo de Desarrollo
 
-Proyecto académico desarrollado por el equipo MOTOGO.
+Daniel Oviedo
+Caballo Roa
+Santiago Rodriguez
+Itachi Cardenas
 
 ---
 
