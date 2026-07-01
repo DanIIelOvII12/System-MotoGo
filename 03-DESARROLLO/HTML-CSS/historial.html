@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MOTOGO - Historial de Compras</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner container">
+      <a class="logo" href="index.html">MOTO<span class="accent">GO</span></a>
+
+      <div class="dropdown">
+        <div class="dropdown-trigger">
+          <svg class="avatar" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z"/></svg>
+        </div>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="micuenta.html">Mi Cuenta</a>
+          <a class="dropdown-item" href="carrito.html">Mi carrito</a>
+          <a class="dropdown-item" href="direcciones.html">Agregar Dirección</a>
+          <a class="dropdown-item" href="trabajaconnosotros.html">Trabaja con nosotros</a>
+          <a class="dropdown-item" href="historial.html">Historial compras</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container profile-page">
+    <div class="row justify-between items-center">
+      <div>
+        <h1 class="h1">Historial de Compras</h1>
+        <p class="subtitle">Aquí encontrarás tus pedidos anteriores y su estado.</p>
+      </div>
+      <div class="search">
+        <input class="input" type="text" placeholder="Buscar pedido, producto o fecha..." />
+        <button class="btn">Buscar</button>
+      </div>
+    </div>
+
+    <section class="mt-16">
+      <!-- Filtros rápidos -->
+      <div class="card">
+        <div class="row items-center">
+          <div class="small">Filtrar por estado:</div>
+          <select class="input" name="filter_estado">
+            <option value="todos">Todos</option>
+            <option value="entregado">Entregado</option>
+            <option value="en_ruta">En ruta</option>
+            <option value="cancelado">Cancelado</option>
+          </select>
+
+          <div class="col"></div>
+
+          <a class="btn btn-ghost" href="cliente.html">← Volver a la tienda</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-16">
+      <!-- Lista de pedidos -->
+      <div id="historial-list" class="column">
+        <!-- Pedido 1 -->
+        <article class="card">
+          <div class="row justify-between items-center">
+            <div class="column">
+              <div class="small">Pedido #20260701-001</div>
+              <div class="small">01 Jul 2026 · 10:24</div>
+            </div>
+            <div>
+              <span class="badge">Entregado</span>
+            </div>
+          </div>
+
+          <ul class="mt-12">
+            <li class="row justify-between">
+              <div class="small">Llanta Trasera Pirelli MT60 — x1</div>
+              <div class="small">$ 345.000</div>
+            </li>
+            <li class="row justify-between">
+              <div class="small">Mano de obra (envío) —</div>
+              <div class="small text-green">GRATIS</div>
+            </li>
+          </ul>
+
+          <div class="row justify-between items-center mt-12">
+            <div class="small">Total:
+              <span class="price text-red">$ 345.000</span>
+            </div>
+            <div class="row" role="group" aria-label="acciones pedido">
+              <a class="btn btn-ghost" href="confirmarpago.html" aria-label="Ver detalles pedido">Ver detalles</a>
+              <a class="btn" href="catalogo.html" aria-label="Volver a comprar">Volver a comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pedido 2 -->
+        <article class="card">
+          <div class="row justify-between items-center">
+            <div class="column">
+              <div class="small">Pedido #20260620-083</div>
+              <div class="small">20 Jun 2026 · 15:40</div>
+            </div>
+            <div>
+              <span class="badge">En ruta</span>
+            </div>
+          </div>
+
+          <ul class="mt-12">
+            <li class="row justify-between">
+              <div class="small">Pastillas de Freno Delanteras — x1</div>
+              <div class="small">$ 125.000</div>
+            </li>
+            <li class="row justify-between">
+              <div class="small">Líquido de Frenos DOT 4 — x1</div>
+              <div class="small">$ 45.000</div>
+            </li>
+          </ul>
+
+          <div class="row justify-between items-center mt-12">
+            <div class="small">Total:
+              <span class="price text-red">$ 170.000</span>
+            </div>
+            <div class="row">
+              <a class="btn btn-ghost" href="confirmarpago.html">Ver detalles</a>
+              <a class="btn" href="catalogo.html">Volver a comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pedido 3 -->
+        <article class="card">
+          <div class="row justify-between items-center">
+            <div class="column">
+              <div class="small">Pedido #20260505-044</div>
+              <div class="small">05 May 2026 · 09:02</div>
+            </div>
+            <div>
+              <span class="badge">Cancelado</span>
+            </div>
+          </div>
+
+          <ul class="mt-12">
+            <li class="row justify-between">
+              <div class="small">Bujía Iridium — x2</div>
+              <div class="small">$ 64.000</div>
+            </li>
+          </ul>
+
+          <div class="row justify-between items-center mt-12">
+            <div class="small">Total:
+              <span class="price text-red">$ 64.000</span>
+            </div>
+            <div class="row">
+              <a class="btn btn-ghost" href="confirmarpago.html">Ver detalles</a>
+              <a class="btn" href="catalogo.html">Volver a comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mensaje si no hay pedidos (puede ocultarse dinámicamente) -->
+        <div id="historial-empty" class="card text-center mt-16" hidden>
+          <div class="h2">No hay compras registradas</div>
+          <p class="small">Explora nuestro catálogo y realiza tu primera compra.</p>
+          <div class="mt-12">
+            <a class="btn" href="catalogo.html">Ver catálogo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 MOTOGO. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

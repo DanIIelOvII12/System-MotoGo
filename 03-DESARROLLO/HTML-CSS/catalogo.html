@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MOTOGO - Catálogo de Productos</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <div class="container mt-24">
+    <header class="mb-12">
+      <h1 class="h1">Frenos y Pastillas</h1>
+      <p class="subtitle">Mostrando repuestos de alta calidad compatibles para tu motocicleta</p>
+    </header>
+
+    <div class="grid" style="grid-template-columns:260px 1fr;">
+      <aside class="card">
+        <h3 class="h2">Filtrar por</h3>
+        <div class="mt-12">
+          <h4 class="small">Marca</h4>
+          <label class="check-row"><input class="checkbox" type="checkbox" checked /> Brembo</label>
+          <label class="check-row"><input class="checkbox" type="checkbox" /> Fras-le</label>
+          <label class="check-row"><input class="checkbox" type="checkbox" /> Ichiban</label>
+        </div>
+        <div class="mt-12">
+          <h4 class="small">Cilindrada</h4>
+          <label class="check-row"><input class="checkbox" type="checkbox" /> 100cc - 150cc</label>
+          <label class="check-row"><input class="checkbox" type="checkbox" checked /> 200cc - 400cc</label>
+        </div>
+      </aside>
+
+      <main>
+        <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px;">
+          <div class="product">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-2YsdfVmGpl0xxNbCBY0B8ikUpPRvOW6cVQ&s" alt="Pastillas Brembo"></div>
+            <div>
+              <span class="badge">Brembo</span>
+              <div class="title">Pastillas de Freno Delanteras Sinterizadas</div>
+              <div class="small">Compatibilidad: Pulsar NS 200 / Duke 200</div>
+              <div class="footer mt-12">
+                <div class="price text-red">$ 125.000</div>
+                <a href="carrito.html" class="btn btn-ghost">Comprar ahora</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-2YsdfVmGpl0xxNbCBY0B8ikUpPRvOW6cVQ&s" alt="Disco Freno"></div>
+            <div>
+              <span class="badge">Ichiban</span>
+              <div class="title">Disco de Freno Ventilado Trasero</div>
+              <div class="small">Compatibilidad: Yamaha FZ16 / FZ25</div>
+              <div class="footer mt-12">
+                <div class="price text-red">$ 89.900</div>
+                <a href="carrito.html" class="btn btn-ghost">Comprar ahora</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-2YsdfVmGpl0xxNbCBY0B8ikUpPRvOW6cVQ&s" alt="Liquido Frenos"></div>
+            <div>
+              <span class="badge">Brembo</span>
+              <div class="title">Líquido de Frenos DOT 4 - 500ml</div>
+              <div class="small">Compatibilidad: Universal</div>
+              <div class="footer mt-12">
+                <div class="price text-red">$ 45.000</div>
+                <a href="carrito.html" class="btn btn-ghost">Comprar ahora</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="mt-24">
+      <a class="link" href="cliente.html">← Volver a Categorías</a>
+    </div>
+  </div>
+</body>
+</html>
