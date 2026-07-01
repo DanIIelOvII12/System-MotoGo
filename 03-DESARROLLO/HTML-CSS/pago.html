@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MOTOGO - Método de Pago</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div class="container mt-24">
+    <h1 class="h1">Finalizar Compra</h1>
+
+    <div class="mt-16 steps">
+      <div class="step completed">✓</div>
+      <div class="step-line" style="background:#dc2626;"></div>
+      <div class="step active">2</div>
+      <div class="step-line"></div>
+      <div class="step">3</div>
+    </div>
+
+    <form class="card max-760">
+      <h3 class="h2">Método de Pago</h3>
+
+      <div class="grid mt-12" style="gap:12px;">
+        <label class="card" style="display:flex; align-items:center; gap:12px;">
+          <input type="radio" name="metodo_pago" class="checkbox" checked />
+          <div class="row items-center">
+            <svg class="small" viewBox="0 0 24 24" width="26" height="26"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            <div class="column">
+              <div class="h2">Tarjeta de Crédito/Débito</div>
+              <div class="small">Visa, Mastercard, American Express</div>
+            </div>
+          </div>
+        </label>
+
+        <label class="card" style="display:flex; align-items:center; gap:12px;">
+          <input type="radio" name="metodo_pago" class="checkbox" />
+          <div class="row items-center">
+            <svg class="small" viewBox="0 0 24 24" width="26" height="26"><path d="M4 10h3v7H4zm6.5 0h3v7h-3zM2 19h20v2H2zm15-9h3v7h-3zm-5-7L2 8v1h20V8z"/></svg>
+            <div class="column"><div class="h2">PSE</div><div class="small">Pago Seguro en Línea</div></div>
+          </div>
+        </label>
+
+        <label class="card" style="display:flex; align-items:center; gap:12px;">
+          <input type="radio" name="metodo_pago" class="checkbox" />
+          <div class="row items-center">
+            <svg class="small" viewBox="0 0 24 24" width="26" height="26"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+            <div class="column"><div class="h2">Nequi / Daviplata</div><div class="small">Billeteras digitales</div></div>
+          </div>
+        </label>
+
+        <label class="card" style="display:flex; align-items:center; gap:12px;">
+          <input type="radio" name="metodo_pago" class="checkbox" />
+          <div class="row items-center">
+            <svg class="small" viewBox="0 0 24 24" width="26" height="26"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5v-5l-10 5-10-5v5z"/></svg>
+            <div class="column"><div class="h2">Contra Entrega</div><div class="small">Paga al recibir tu pedido</div></div>
+          </div>
+        </label>
+      </div>
+
+      <div class="row mt-16">
+        <a class="btn btn-ghost" href="confirmardireccion.html" style="flex:1;">Regresar</a>
+        <a class="btn" href="confirmarpago.html" style="flex:1; background:#dc2626; color:#fff;">Continuar</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

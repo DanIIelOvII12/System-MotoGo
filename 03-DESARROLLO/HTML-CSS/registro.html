@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MOTOGO - Crear Cuenta</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div style="display:flex; justify-content:center; padding:40px 20px;">
+    <div class="centered-card">
+      <div class="text-center mb-12">
+        <div class="logo">MOTO<span class="accent">GO</span></div>
+      </div>
+
+      <div class="text-center mb-12">
+        <h1 class="h1" id="form-titulo">CREAR CUENTA</h1>
+        <p class="subtitle">Únete para comprar o vender repuestos</p>
+      </div>
+
+      <form id="registro-form" class="form mt-12">
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px;">
+          <div>
+            <label class="label">Nombres</label>
+            <input id="input-nombres" class="input" type="text" required />
+          </div>
+          <div>
+            <label class="label">Apellidos</label>
+            <input id="input-apellidos" class="input" type="text" required />
+          </div>
+          <div>
+            <label class="label">Teléfono</label>
+            <input id="input-telefono" class="input" type="tel" required />
+          </div>
+          <div>
+            <label class="label">Correo electrónico</label>
+            <input id="input-correo" class="input" type="email" required />
+          </div>
+          <div>
+            <label class="label">Contraseña</label>
+            <input id="input-password" class="input" type="password" required />
+          </div>
+          <div>
+            <label class="label">Confirmar contraseña</label>
+            <input id="input-confirm" class="input" type="password" required />
+          </div>
+        </div>
+
+        <label class="check-row mt-12">
+          <input class="checkbox" type="checkbox" required/>
+          <span class="small">Acepto los <span class="text-red">términos y condiciones</span></span>
+        </label>
+
+        <button id="btn-guardar" class="btn" type="submit" style="background:#dc2626;color:#fff;width:100%;">Crear Cuenta</button>
+      </form>
+
+      <div class="mt-12 text-center">
+        ¿Ya tienes cuenta? <a href="login.html" class="link">Inicia sesión</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="crud.js"></script>
+</body>
+</html>

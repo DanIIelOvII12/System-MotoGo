@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MOTOGO - Finalizar Compra</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div class="container mt-24">
+    <h1 class="h1">Finalizar Compra</h1>
+
+    <div class="mt-16 steps">
+      <div class="step active">1</div>
+      <div class="step-line"></div>
+      <div class="step">2</div>
+      <div class="step-line"></div>
+      <div class="step">3</div>
+    </div>
+
+    <div class="checkout">
+      <div>
+        <div class="card">
+          <h3 class="h2">Direcciones Sugeridas</h3>
+          <p class="subtitle">Selecciona una de tus direcciones guardadas para un envío rápido:</p>
+
+          <div class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px;">
+            <label class="card" data-selected="true">
+              <input type="radio" name="direccion_sugerida" checked class="checkbox" />
+              <div class="mt-8 column">
+                <span class="badge">Casa</span>
+                <div class="h2 mt-8">Carrera 7 #32-16</div>
+                <div class="small">Bogotá, Cundinamarca</div>
+              </div>
+            </label>
+
+            <label class="card">
+              <input type="radio" name="direccion_sugerida" class="checkbox" />
+              <div class="mt-8 column">
+                <span class="badge">Trabajo</span>
+                <div class="h2 mt-8">Calle 100 #15-30</div>
+                <div class="small">Bogotá, Cundinamarca</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <form class="card mt-16">
+          <h3 class="h2">Enviar a otra dirección</h3>
+
+          <label class="label">Nombre completo</label>
+          <input class="input" type="text" placeholder="Ej: Juan Pérez" />
+
+          <label class="label">Teléfono</label>
+          <input class="input" type="text" placeholder="Ej: +57 300 123 4567" />
+
+          <label class="label">Dirección completa</label>
+          <input class="input" type="text" placeholder="Ej: Avenida Caracas #45-12" />
+
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px;">
+            <div>
+              <label class="label">Ciudad</label>
+              <input class="input" type="text" value="Bogotá" readonly />
+            </div>
+            <div>
+              <label class="label">Código Postal</label>
+              <input class="input" type="text" value="110111" readonly />
+            </div>
+          </div>
+
+          <div class="mt-16">
+            <a class="btn btn-ghost w-full" href="pago.html" style="width:100%;">Continuar al Pago</a>
+            <div class="mt-8">
+              <a class="link" href="carrito.html">Regresar</a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <aside>
+        <div class="summary">
+          <h3 class="h2">Resumen</h3>
+          <div class="row justify-between"><div class="small">Subtotal</div><div>$ 89.900</div></div>
+          <div class="row justify-between"><div class="small">Envío</div><div class="text-green">GRATIS</div></div>
+          <div style="height:1px;background:#f3f4f6;margin:8px 0;"></div>
+          <div class="row justify-between"><div class="h2">Total</div><div class="price text-red">$ 89.900</div></div>
+          <div class="mt-12" style="background:#f0fdf4;border:1px solid #bbf7d0;padding:10px;border-radius:6px;color:#166534;">
+            ✓ Entrega estimada: Mañana
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MOTOGO - Solicitud de Repartidor</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div class="container profile-page">
+    <h1 class="h1">Solicitud para ser Repartidor</h1>
+    <p class="small">Tu solicitud será revisada por un administrador. Estado inicial: <span class="text-red">Pendiente</span></p>
+
+    <form class="card dark-card mt-12">
+      <h3 class="h2">Información Personal</h3>
+      <div class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
+        <div>
+          <label class="label">Nombre completo *</label>
+          <input class="input" type="text" required />
+        </div>
+        <div>
+          <label class="label">Correo electrónico *</label>
+          <input class="input" type="email" required />
+        </div>
+        <div>
+          <label class="label">Teléfono *</label>
+          <input class="input" type="text" required />
+        </div>
+        <div>
+          <label class="label">Número de documento *</label>
+          <input class="input" type="text" required />
+        </div>
+        <div>
+          <label class="label">Ciudad *</label>
+          <input class="input" type="text" required />
+        </div>
+        <div>
+          <label class="label">Dirección *</label>
+          <input class="input" type="text" required />
+        </div>
+      </div>
+
+      <h3 class="h2 mt-12">Información del Vehículo</h3>
+      <div class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
+        <div><label class="label">Placa de moto *</label><input class="input" type="text" required /></div>
+        <div><label class="label">Marca de moto *</label><input class="input" type="text" required /></div>
+        <div><label class="label">Modelo de moto *</label><input class="input" type="text" required /></div>
+        <div><label class="label">Año *</label><input class="input" type="text" required /></div>
+        <div><label class="label">Cilindraje *</label><input class="input" type="text" required /></div>
+        <div><label class="label">Número de licencia *</label><input class="input" type="text" required /></div>
+      </div>
+
+      <h3 class="h2 mt-12">Documentos</h3>
+      <div class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
+        <label class="file-upload">
+          <input type="file" accept="image/*,.pdf" required/>
+          <svg width="28" height="28" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/></svg>
+          <div class="small">Foto licencia</div>
+          <div class="small">Subir archivo</div>
+        </label>
+
+        <label class="file-upload">
+          <input type="file" accept="image/*,.pdf" required/>
+          <svg width="28" height="28" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/></svg>
+          <div class="small">Documentos moto</div>
+          <div class="small">Subir archivo</div>
+        </label>
+
+        <label class="file-upload">
+          <input type="file" accept="image/*,.pdf" required/>
+          <svg width="28" height="28" viewBox="0 0 24 24"><path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/></svg>
+          <div class="small">Foto cédula</div>
+          <div class="small">Subir archivo</div>
+        </label>
+      </div>
+
+      <label class="check-row mt-12">
+        <input class="checkbox" type="checkbox" required/>
+        <span class="small">Acepto los términos y condiciones...</span>
+      </label>
+
+      <div class="mt-12">
+        <button class="btn" type="submit" style="background:#dc2626;color:#fff;width:100%;">Enviar solicitud</button>
+        <div class="mt-8"><a class="btn btn-ghost" href="trabajaconnosotros.html" style="width:100%;">Regresar</a></div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
