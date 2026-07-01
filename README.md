@@ -122,8 +122,4 @@ Caballo Roa
 Santiago Rodriguez
 Itachi Cardenas
 
----
 
-# Licencia
-
-Este proyecto se distribuye bajo la licencia MIT.
