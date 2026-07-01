@@ -55,38 +55,6 @@ El sistema permite a los usuarios realizar pedidos, gestionar productos, coordin
 ---
 
 
-# Documentación
-
-La documentación del proyecto se encuentra organizada en la carpeta:
-
-```text
-docs/
-```
-
-## Contenido
-
-### Requisitos
-
-- Documento IEEE 830
-- Requerimientos funcionales
-- Requerimientos no funcionales
-
-### Planificación
-
-- Cronogramas
-- Diagramas de Gantt
-- Archivos Microsoft Project
-
-### Diagramas
-
-- Casos de uso
-
-### Presentaciones
-
-- Material de sustentación
-
----
-
 
 ### main
 
@@ -107,13 +75,6 @@ Contiene funcionalidades específicas desarrolladas por cada integrante.
 
 En fase de análisis y diseño.
 
-Actualmente se están desarrollando:
-
-- Diagramas UML.
-- Modelado de base de datos.
-- Planificación del proyecto.
-
----
 
 # Equipo de Desarrollo
 
