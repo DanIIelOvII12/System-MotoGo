@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MOTOGO - Mis Direcciones</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div class="container profile-page">
+    <h1 class="h1">Mis Direcciones</h1>
+
+    <div class="card wide-card">
+      <h3 class="h2">Agregar Nueva Dirección</h3>
+      <form class="form mt-12">
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px;">
+          <div>
+            <label class="label">Etiqueta (Ej: Casa, Trabajo)</label>
+            <input class="input" type="text" placeholder="Ej: Mi Casa" required/>
+          </div>
+          <div>
+            <label class="label">Dirección completa</label>
+            <input class="input" type="text" placeholder="Ej: Calle 45 #22-10, Bogotá" required/>
+          </div>
+          <div>
+            <label class="label">Barrio / Sector</label>
+            <input class="input" type="text" placeholder="Ej: Teusaquillo" required/>
+          </div>
+          <div>
+            <label class="label">Notas / Indicaciones adicionales</label>
+            <input class="input" type="text" placeholder="Ej: Apto 402, Torre B"/>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <button class="btn" type="submit" style="background:#dc2626;color:#fff;width:100%;">Guardar Dirección</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card wide-card">
+      <h3 class="h2">Direcciones Guardadas</h3>
+      <div class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px;">
+        <div class="card">
+          <div class="row justify-between">
+            <div><span class="badge">Casa</span></div>
+            <button class="btn-ghost">Eliminar</button>
+          </div>
+          <div class="h2 mt-8">Carrera 7 #32-16</div>
+          <div class="small">Bogotá, Cundinamarca</div>
+          <div class="small text-red">Nota: Apt 501 - Portería principal</div>
+        </div>
+
+        <div class="card">
+          <div class="row justify-between">
+            <div><span class="badge">Trabajo</span></div>
+            <button class="btn-ghost">Eliminar</button>
+          </div>
+          <div class="h2 mt-8">Calle 100 #15-30</div>
+          <div class="small">Bogotá, Cundinamarca</div>
+          <div class="small">Nota: Oficina 302</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <a class="link" href="cliente.html">← Volver al inicio</a>
+    </div>
+  </div>
+</body>
+</html>

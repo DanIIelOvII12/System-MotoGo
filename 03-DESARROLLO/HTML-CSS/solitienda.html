@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MOTOGO - Solicitud de Tienda</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div class="container profile-page">
+    <h1 class="h1">Solicitud para ser Tienda</h1>
+    <p class="small">Tu solicitud será revisada por un administrador. Estado inicial: <span class="text-red">Pendiente</span></p>
+
+    <form class="card dark-card mt-12">
+      <h3 class="h2">Información de la Empresa</h3>
+      <div class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
+        <div><label class="label">Nombre de la empresa *</label><input class="input" type="text" required/></div>
+        <div><label class="label">Nombre del representante *</label><input class="input" type="text" required/></div>
+        <div><label class="label">Correo electrónico *</label><input class="input" type="email" required/></div>
+        <div><label class="label">Teléfono *</label><input class="input" type="text" required/></div>
+        <div><label class="label">NIT o RUT *</label><input class="input" type="text" required/></div>
+        <div><label class="label">Ciudad *</label><input class="input" type="text" required/></div>
+
+        <div style="grid-column:1/-1;">
+          <label class="label">Dirección del local *</label>
+          <input class="input" type="text" required/>
+        </div>
+      </div>
+
+      <h3 class="h2 mt-12">Información del Negocio</h3>
+      <div class="mt-12">
+        <label class="label">Categoría de productos *</label>
+        <select class="input" required>
+          <option value="" selected disabled hidden>Selecciona una categoría</option>
+          <option>Repuestos</option><option>Accesorios</option><option>Herramientas</option><option>Lubricantes y Químicos</option>
+        </select>
+      </div>
+
+      <div class="mt-12">
+        <label class="label">Descripción de la tienda *</label>
+        <textarea class="input" rows="4" required></textarea>
+      </div>
+
+      <h3 class="h2 mt-12">Documentos</h3>
+      <div class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
+        <label class="file-upload">
+          <input type="file" accept="image/*" required/>
+          <div class="small">Logo de la empresa</div>
+          <div class="small">Subir logo</div>
+        </label>
+        <label class="file-upload">
+          <input type="file" accept="image/*,.pdf" required/>
+          <div class="small">Documento RUT</div>
+          <div class="small">Subir RUT</div>
+        </label>
+        <label class="file-upload">
+          <input type="file" accept="image/*,.pdf" required/>
+          <div class="small">Cámara de comercio</div>
+          <div class="small">Subir documento</div>
+        </label>
+      </div>
+
+      <label class="check-row mt-12">
+        <input class="checkbox" type="checkbox" required/>
+        <span class="small">Acepto los términos y condiciones comerciales...</span>
+      </label>
+
+      <div class="mt-12">
+        <button class="btn" type="submit" style="background:#dc2626;color:#fff;width:100%;">Enviar solicitud</button>
+        <div class="mt-8"><a class="btn btn-ghost" href="trabajaconnosotros.html" style="width:100%;">Regresar</a></div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

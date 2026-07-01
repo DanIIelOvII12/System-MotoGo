@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>MOTOGO - Mi Perfil</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div class="container profile-page">
+    <h1 class="h1">Mi Perfil</h1>
+
+    <div class="card wide-card">
+      <div class="row justify-between items-center">
+        <div class="profile">
+          <div class="avatar">J</div>
+          <div>
+            <div class="h2">Juan Pérez</div>
+            <div class="small">cliente@motogo.com</div>
+          </div>
+        </div>
+        
+        <button class="btn" style="background:#dc2626;color:#fff;">Guardar Cambios</button>
+      </div>
+
+      <div class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:12px;">
+        <div>
+          <label class="label">Nombre completo</label>
+          <input class="input" type="text" placeholder="Juan Pérez"/>
+        </div>
+
+        <div>
+          <label class="label">Correo electrónico</label>
+          <input class="input" type="email" placeholder="cliente@motogo.com"/>
+        </div>
+
+        <div>
+          <label class="label">Teléfono</label>
+          <input class="input" type="text" placeholder="+57 303 456 7890"/>
+        </div>
+
+        <div>
+          <label class="label">Dirección principal</label>
+          <input class="input" type="text" placeholder="Carrera 7 #32-16, Bogotá"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="card wide-card">
+      <h3 class="h2">Cambiar Contraseña</h3>
+      <form class="grid mt-12" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:12px;">
+        <div>
+          <label class="label">Contraseña actual</label>
+          <input class="input" type="password" />
+        </div>
+        <div>
+          <label class="label">Nueva contraseña</label>
+          <input class="input" type="password" />
+        </div>
+        <div class="mt-12" style="grid-column:1/-1;">
+          <button class="btn" type="submit" style="background:#dc2626;color:#fff;">Actualizar Contraseña</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="mt-12">
+      <a class="link" href="cliente.html">← Volver al inicio</a>
+    </div>
+  </div>
+</body>
+</html>
