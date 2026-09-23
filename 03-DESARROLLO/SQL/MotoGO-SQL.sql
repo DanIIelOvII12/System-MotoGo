@@ -631,3 +631,149 @@ values
 	(2, 2, 3, 'KDJ-823', 'Honda', '150', 'Rojo', 2026, '---', '2026-02-02', '2026-02-02', 'Activo', '2026-02-02'),
 	(3, 3, 2, 'XLW-104', 'Suzuki', '250', 'Azul', 2026, '---', '2026-03-03', '2026-03-03', 'Inactivo', '2026-03-03'),
 	(4, 1, 3, 'MLZ-234', 'Suzuki', '250', 'Azul', 2026, '---', '2026-03-03', '2026-03-03', 'Inactivo', '2026-03-03');
+
+--Registra las categorías generales de productos.--
+
+insert into categoria_producto
+	(id_categoria_producto, nombre, descripcion, activo, fecha_creacion)
+values
+	(1, 'Repuestos', 'Piezas de motor, frenos y transmisión', 'Activo', '2026-01-01'),
+	(2, 'Accesorios', 'Cascos, guantes y lujos para la moto', 'Activo', '2026-01-01'),
+	(3, 'Mantenimiento', 'Aceites, lubricantes y líquidos de frenos', 'Activo', '2026-01-02');
+
+--Registra las tiendas.--
+
+insert into tienda
+	(id_tienda, id_cliente, nom_tienda, nit, descripcion, 
+	logo_url, tel_tienda, correo_tienda, direccion_tienda, ciudad_tienda, 
+	departamento_tienda, fecha_solicitud, estado)
+values
+	(1, 2, 'MotoGO', '3315783', null, null, '301383', 'MotoGO@gmail.com', 'TV 52 #78C 14 Sur', 'Bogota', 'Cundinamarca', '2026-01-01', 'Activo'),
+	(2, 3, 'Rapitienda', '4426894', null, null, '402484', 'contacto@rapitienda.com', 'Calle 45 #12-34', 'Bogota', 'Cundinamarca', '2026-02-02', 'Activo'),
+	(3, 5, 'EnviosExpress', '5517920', null, null, '503595', 'info@enviosx.com', 'Av. Ciudad de Cali #26-80', 'Bogota', 'Cundinamarca', '2026-03-03', 'Inactivo');
+	
+
+--Relaciona las tiendas con las categorías de productos que manejan.--
+
+insert into tienda_categoria
+	(id_tienda, id_categoria_producto)
+values
+	(1, 1),
+	(1, 2),
+	(1, 3),
+	(2, 1),
+	(2, 2),
+	(3, 3);
+
+
+--Registra categorías específicas pertenecientes a una categoría general.--
+
+insert into categoria_especifica
+	(id_categoria_especifica, id_categoria_producto, nombre, descripcion, activo)
+values
+	(1, 1, 'Culata', 'Encuentra las mejores culatas para tu moto', 'Activo'),
+	(2, 1,'LLantas', 'Con llanta pinchada?', 'Activo'),
+	(3, 1, 'Frenos', 'Sin frenos?', 'Activo'),
+	(4, 2, 'Cascos', 'Cascos resistentes', 'Activo'),
+	(5, 2,'Guantes', 'Guantes proteccion', 'Activo'),
+	(6, 3, 'Aceite', 'No resbala?', 'Activo');
+
+--Registra los productos disponibles en el catálogo.--
+
+insert into producto
+	(id_producto, id_categoria_especifica, nombre, referencia, marca, descripcion)
+values
+	(1, 1, 'Culata 4029', '4029-25', 'Yamaha', 'Nuevo'),
+	(2, 1, 'Culata 3245', '3245-90', 'Boxer', 'La mejor culata'),
+	(3, 1, 'Culata 543', '543-10', 'Honda', 'Buen estado'),
+	(4, 2, 'LLanta 123', '321', 'Honda', 'Usado'),
+	(5, 2, 'LLanta 456', '456-1', 'Ninja', 'Bueno'),
+	(6, 5, 'Guantes', null, null, 'Rotos'),
+	(7, 4, 'Cascos', null, null, null);
+
+--Registra precio y stock de las tiendas.--
+
+insert into tienda_producto
+	(id_tienda_producto, id_tienda, id_producto, precio, stock,
+	garantia_dias, estado_producto, activo, fecha_publicacion, fecha_actualizacion)
+values
+	(1, 1, 1, '10.000', '20', '30', 'Bueno', 'Activo', '2026-01-01', '2026-01-01'),
+	(2, 1, 2, '15.000', '0', '10', 'Bueno', 'Pendiente', '2026-02-02', '2026-02-02'),
+	(3, 2, 5, '30.000', '5', '5', 'Rotos', 'Activo',' 2026-03-03', '2026-03-03'),
+	(4, 3, 7, '500.000', '34', '90', 'Nuevo', 'Activo', '2026-01-01', '2026-01-01');
+
+--Registra los carritos de compra.--
+
+insert into carrito
+	(id_carrito, id_cliente, fecha_actualizacion)
+values
+	(1, 2, '2026-01-01'),
+	(2, 3, '2026-02-02'),
+	(3, 5, '2026-03-03');
+
+
+
+--Agrega productos y cantidades a los carritos de compra.--
+
+insert into carrito_detalle
+	(id_carrito_detalle, id_carrito, id_tienda_producto, 
+	cantidad, precio_unitario, subtotal, fecha_agregado)
+values
+	(1, 1, 1, '2', '10.000', '20.000', '2026-01-01'),
+	(2, 1, 2, '3', '30.000', '90.000', '2026-02-02'),
+	(3, 1, 3, '4', '100.000', '400.000', '2026-03-03'),
+	(4, 2, 1, '6', '10.000', '60.000', '2026-04-04'),
+	(5, 2, 4, '1', '500.000', '500.000', '2026-05-05');
+
+
+--Registra los departamentos utilizados para organizar las ubicaciones.--
+
+insert into departamento 
+	(id_departamento, nombre_departamento, capital) 
+values
+(1, 'amazonas', 'leticia'), (2, 'antioquia', 'medellín'), (3, 'arauca', 'arauca'),
+(4, 'atlántico', 'barranquilla'), (5, 'bolívar', 'cartagena de indias'), (6, 'boyacá', 'tunja'),
+(7, 'caldas', 'manizales'), (8, 'caquetá', 'florencia'), (9, 'casanare', 'yopal'),
+(10, 'cauca', 'popayán'), (11, 'cesar', 'valledupar'), (12, 'chocó', 'quibdó'),
+(13, 'córdoba', 'montería'), (14, 'cundinamarca', 'bogotá'), (15, 'guainía', 'inírida'),
+(16, 'guaviare', 'san josé del guaviare'), (17, 'huila', 'neiva'), (18, 'la guajira', 'riohacha'),
+(19, 'magdalena', 'santa marta'), (20, 'meta', 'villavicencio'), (21, 'nariño', 'san juan de pasto'),
+(22, 'norte de santander', 'san josé de cúcuta'), (23, 'putumayo', 'mocoa'), (24, 'quindío', 'armenia'),
+(25, 'risaralda', 'pereira'), (26, 'san andrés y providencia', 'san andrés'), (27, 'santander', 'bucaramanga'),
+(28, 'sucre', 'sincelejo'), (29, 'tolima', 'ibagué'), (30, 'valle del cauca', 'cali'),
+(31, 'vaupés', 'mitú'), (32, 'vichada', 'puerto carreño');
+
+--Registra las ciudades y el departamento al que pertenece cada una.--
+
+insert into ciudad 
+(id_ciudad, nombre_ciudad, id_departamento) 
+values
+(1, 'medellín', 2), (2, 'bello', 2), (3, 'itagüí', 2), (4, 'envigado', 2), (5, 'rionegro', 2),
+(6, 'barranquilla', 4), (7, 'soledad', 4),
+(8, 'cartagena de indias', 5),
+(9, 'bogotá', 14), (10, 'soacha', 14), (11, 'chía', 14), (12, 'zipaquirá', 14),
+(13, 'manizales', 7),
+(14, 'santa marta', 19),
+(15, 'san josé de cúcuta', 22),
+(16, 'pereira', 25),
+(17, 'bucaramanga', 27), (18, 'floridablanca', 27),
+(19, 'cali', 30), (20, 'buenaventura', 30), (21, 'palmira', 30);
+
+--Registra las direcciones de entrega de los clientes.--
+
+insert into direccion 
+	(id_direccion, id_cliente, tipo_lugar, direccion, barrio, id_ciudad, codigo_postal, info, fecha_registro) 
+values
+(1, 2, 'casa', 'calle 45 #12-34', 'chapinero', 9, '110221', 'apto 402, torre b', '2026-09-07'),
+(2, 3, 'trabajo', 'carrera 43a #7-50', 'el poblado', 1, null, 'oficina central motogo', '2026-09-07'),
+(3, 5, 'otro', 'avenida 6n #20-12', 'granada', 19, '760001', null, '2026-09-07');
+
+--Registra los pedidos realizados por los clientes.--
+
+insert into pedido
+	(id_pedido, id_cliente, id_direccion, id_carrito_detalle, fecha_registro, estado)
+values
+	(1, 2, 1, 3, '2026-01-01', 'Entregado'),
+	(2, 3, 2, 1, '2026-02-02', 'Pendiente'),
+	(3, 5, 1, 5, '2026-03-03', 'Se daño'),
+	(4, 5, 1, 2, '2026-04-04', 'Entregado');
