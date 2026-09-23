@@ -951,3 +951,115 @@ order by marca asc;
 select precio, stock, garantia_dias 
 from tienda_producto tp 
 where tp.garantia_dias <= 90;
+
+
+-- Subconsultas
+
+-- Esta consulta muestra el nombre y la marca de los productos que están publicados en una tienda cuyo stock es menor a 30 unidades.
+-- La subconsulta obtiene los id_producto que cumplen esa condición y la consulta principal utiliza esos identificadores para mostrar los datos del producto.
+
+select nombre, marca
+from producto p 
+where p.id_producto in(
+	select id_producto 
+	from tienda_producto
+	where stock < 30
+);
+
+-- Esta consulta muestra todos los vehículos pertenecientes a repartidores que están activos.
+-- La subconsulta obtiene los id_repartidor cuyo estado es 'Activo' y la consulta principal utiliza esos identificadores para filtrar los vehículos.
+select *
+from vehiculo
+where id_repartidor in (
+    select id_repartidor
+    from repartidor
+    where activo = 'Activo'
+);
+
+-- Esta subconsulta muestra los productos cuyo precio es mayor al precio promedio de todos los productos publicados en tienda_producto.
+-- La subconsulta calcula el promedio de los precios y la consulta principal compara cada precio con ese resultado.
+select nombre, precio
+from producto p
+inner join tienda_producto tp on p.id_producto = tp.id_producto
+where tp.precio > (
+    select avg(precio) 
+    from tienda_producto
+);
+
+-- Esta subconsulta muestra los clientes que tienen al menos un pedido registrado.
+-- La subconsulta obtiene los id_cliente presentes en la tabla pedido y la consulta principal utiliza esos identificadores para mostrar los nombres y apellidos de los clientes.
+select nombres, apellidos
+from cliente c
+where c.id_cliente in (
+    select id_cliente 
+    from pedido
+);
+
+-- Esta subconsulta muestra las tiendas que tienen al menos un producto con stock disponible.
+-- La subconsulta obtiene los id_tienda de las publicaciones cuyo stock es mayor que cero y la consulta principal muestra el nombre de esas tiendas.
+select nom_tienda
+from tienda t
+where t.id_tienda in (
+    select id_tienda
+    from tienda_producto
+    where stock > 0
+);
+
+
+-- Update
+
+-- Esta actualización cambia el número de teléfono del cliente cuyo id_cliente es 1.
+
+update cliente
+set telefono = '3013833742'
+where id_cliente = 1;
+
+-- Esta actualización cambia el estado del pedido de los pedidos realizados por el cliente 3 y establece su estado como 'Entregado'.
+update pedido
+set estado = 'Entregado'
+where id_cliente = 3;
+
+-- Esta actualización cambia el nombre, NIT, teléfono y correo de la tienda cuyo id_tienda es 2.
+update tienda
+set nom_tienda = 'Cambio nombre',
+	nit = '10210230',
+	tel_tienda  = '(601) 617239',
+	correo_tienda = 'cambionombre@gmail.com'
+where id_tienda = 2;
+
+-- Esta actualización cambia el nombre del método de pago cuyo id_metodo_pago es 3.
+update metodo_pago
+set nombre = 'Davibank'
+where id_metodo_pago = 3;
+
+-- Esta actualización cambia el correo electrónico del usuario cuyo id_usuario es 1.
+update usuario
+set correo = 'admin1@gmail.com'
+where id_usuario = 1;
+
+-- Delete
+
+-- Esta eliminación borra de la tabla ciudad el registro cuyo id_ciudad es 3.
+
+delete from ciudad
+where id_ciudad = 3;
+
+-- Esta eliminación borra de la tabla factura la factura cuyo id_factura es 2.
+
+delete from factura
+where id_factura = 2;
+
+-- Esta eliminación borra de la tabla metodo_pago el método de pago cuyo id_metodo_pago es 3.
+
+delete from metodo_pago
+where id_metodo_pago = 3;
+
+-- Esta eliminación borra de la tabla pago el registro cuyo id_pago es 2.
+
+delete from pago
+where id_pago = 2;
+
+-- Esta eliminación borra de la tabla departamento el registro cuyo id_departamento es 3.
+
+delete from departamento
+where id_departamento = 3;
