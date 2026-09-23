@@ -55,9 +55,6 @@ El sistema permite a los usuarios realizar pedidos, gestionar productos, coordin
 ---
 
 
-
-### main
-
 Contiene versiones estables y aprobadas del proyecto.
 
 ### develop
