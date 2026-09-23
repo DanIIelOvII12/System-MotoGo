@@ -481,3 +481,153 @@ comment on column modelo_moto.id_modelo_moto is 'Identificador único del modelo
 comment on column modelo_moto.id_marca_moto is 'Marca a la que pertenece el modelo.';
 comment on column modelo_moto.nombre_modelo is 'Nombre del modelo de motocicleta.';
 comment on column modelo_moto.cilindraje is 'Cilindraje del modelo.';
+
+create table compatibilidad_producto (
+    id_compatibilidad_producto int not null,
+    id_producto int not null,
+    id_modelo_moto int not null,
+    
+    constraint pk_compatibilidad_producto primary key (id_compatibilidad_producto),
+    constraint fk_momo_copr foreign key (id_modelo_moto) references modelo_moto (id_modelo_moto),
+    constraint fk_prod_copr foreign key (id_producto) references producto (id_producto),
+    constraint uk_compatibilidad unique (id_producto, id_modelo_moto)
+);
+comment on table compatibilidad_producto is 'Permite relacionar los productos con los modelos de motocicleta para indicar qué repuestos o accesorios son compatibles con cada modelo.';
+comment on column compatibilidad_producto.id_compatibilidad_producto is 'Identificador único de la compatibilidad.';
+comment on column compatibilidad_producto.id_producto is 'Producto compatible.';
+comment on column compatibilidad_producto.id_modelo_moto is 'Modelo de motocicleta compatible.';
+
+create table metodo_pago (
+    id_metodo_pago int not null,
+    nombre varchar(100) not null,
+    
+    constraint pk_metodo_pago primary key (id_metodo_pago),
+    constraint uk_metodo_pago unique (nombre)
+);
+comment on table metodo_pago is 'Almacena los métodos de pago disponibles que pueden utilizar los clientes para realizar compras dentro de la plataforma.';
+comment on column metodo_pago.id_metodo_pago is 'Identificador único del método de pago.';
+comment on column metodo_pago.nombre is 'Nombre del método de pago.';
+
+
+create table pago (
+    id_pago int not null,
+    id_metodo_pago int not null,
+    id_pedido int not null,
+    referencia_pago varchar(100) not null,
+    valor_pagado real not null,
+    fecha_pago date not null,
+    estado_pago varchar(20) not null,
+    observaciones varchar(200) null,
+    
+    constraint pk_pago primary key (id_pago),
+    constraint fk_mepa_pago foreign key (id_metodo_pago) references metodo_pago (id_metodo_pago),
+    constraint fk_pedi_pago foreign key (id_pedido) references pedido (id_pedido),
+    constraint uk_pago unique (referencia_pago, id_pedido)
+);
+
+comment on table pago is 'Almacena la información de los pagos realizados por los clientes para cancelar los pedidos generados dentro de MotoGO.';
+comment on column pago.id_pago is 'Identificador único del pago.';
+comment on column pago.id_metodo_pago is 'Método de pago utilizado.';
+comment on column pago.referencia_pago is 'Código o referencia de la transacción.';
+comment on column pago.valor_pagado is 'Valor total pagado por el cliente.';
+comment on column pago.fecha_pago is 'Fecha y hora en que se realizó el pago.';
+comment on column pago.estado_pago is 'Estado actual del pago.';
+comment on column pago.observaciones is 'Comentarios o información adicional del pago.';
+comment on column pago.id_pedido is 'Se realiza el pago del pedido';
+
+
+--Agrega los roles disponibles en el sistema.--
+
+insert into rol 
+	(id_rol, nombre_rol)
+values
+	(1, 'Administrador'),
+	(2, 'Repartidor'),
+	(3, 'Local'),
+	(4, 'Cliente');
+
+
+create extension if not exists pgcrypto;
+
+--Registra los usuarios y sus datos de acceso en la plataforma.--
+
+insert into usuario
+	(id_usuario, login, correo, contrasenia, fecha_registro, token_recu_contra, token_activa)
+values
+	(1, 101, 'usuario1gmail.com', crypt('MiPasswordSeguro123', gen_salt('bf', 10)), '2026-01-01', null, null),
+	(2, 102, 'usuario2@gmail.com', crypt('MiPasswordSeguro123', gen_salt('bf', 10)), '2026-02-02', null, null),
+	(3, 103, 'usuario3@gmail.com', crypt('MiPasswordSeguro123', gen_salt('bf', 10)), '2026-03-03', null, null),
+	(4, 104, 'usuario4@gmail.com', crypt('MiPasswordSeguro123', gen_salt('bf', 10)), '2026-04-04', null, null),
+	(5, 105, 'usuario5@gmail.com', crypt('MiPasswordSeguro123', gen_salt('bf', 10)), '2026-05-05', null, null),
+	(6, 106, 'usuario6@gmail.com', crypt('MiPasswordSeguro123', gen_salt('bf', 10)), '2026-06-06', null, null);
+
+
+--Asocia cada usuario con el rol que tiene asignado.--
+
+insert into rol_usuario
+	(id_rol, id_usuario)
+values
+	(1, 4),
+	(4, 5),
+	(4, 3),
+	(1, 2),
+	(4, 1),
+	(1, 6);
+
+
+--Registra los tipos de documento que pueden utilizar los clientes.--
+
+insert into tipo_documento 
+	(id_tipo_documento, nombre, abreviatura, estado)
+values 
+	(1, 'Cédula de ciudadania', 'CC', 'Activo'),
+	(2, 'Tarjeta de identidad', 'TI', 'Activo'),
+	(3, 'Permiso por protección temporal', 'PPT', 'Activo'),
+	(4, 'Pasaporte', 'PP', 'Activo');
+
+
+
+--Registra la información personal de los clientes.--
+
+insert into cliente
+	(id_cliente, id_tipo_documento, id_usuario, numero_documento, nombres, apellidos, telefono, foto_perfil, activo)
+values
+	(1, 1, 1, '1023121212', 'Daniel Alexander', 'Oviedo Valencia', '3013834237', null, 'Activo'),
+	(2, 1, 2, '7912340', 'Itachi', 'Cardenas', '3103709742', null, 'Activo'),
+	(3, 1, 3, '1023854394', 'Ricardo', 'Arevalo', '3132587512', null, 'Activo'),
+	(4, 1, 4, '549203', 'Caballo', 'Roa', '3144117140', null, 'Activo'),
+	(5, 1, 5, '9120312', 'Eylen', 'Aguilar', '3052042125', null , 'Activo'),
+	(6, 1, 6, '3400422','Santigo', 'Rodriguez', '3007554965', null, 'Activo');
+	
+
+--Registra las solicitudes y datos de los repartidores.--
+insert into repartidor 
+	(id_repartidor, id_cliente, num_licencia, fecha_expedicion_licencia, fecha_vencimiento_licencia, 
+	licencia_url, fecha_solicitud, fecha_aprobacion, estado, observacion)
+values
+	(1, 2, '12', '2026-01-01', '2026-01-01', null, '2026-01-01', '2026-01-01', 'Activo', 'Cumple'),
+	(2, 3, '123', '2026-03-03', '2026-03-03', null, '2026-03-03', '2026-03-03', 'Activo', 'Cumple'),
+	(3, 5, '12345', '2026-05-05', '2026-05-05', null, '2026-05-05', null, 'Pendiente', null);
+
+
+--Registra los tipos de vehículos disponibles para los repartidores.--
+
+insert into tipo_vehiculo
+	(id_tipo_vehiculo, nom_vehiculo, activo)
+values
+	(1, 'Moto', 'Activo'),
+	(2, 'Carro', 'Pendiente'),
+	(3, 'Cicla', 'ACtivo'),
+	(4, 'Caminando', 'Activo');
+
+
+--Registra los vehículos asociados a los repartidores.--
+
+insert into vehiculo
+	(id_vehiculo, id_repartidor, id_tipo_vehiculo, placa, marca, modelo, color, anio, 
+	tarjeta_propiedad_url, soat_vencimiento, mecanico_vencimiento, activo, fecha_registro)
+values
+	(1, 1, 1, 'MUR-459', 'Yamaha', '200', 'Negro', 2026, '---', '2026-01-01', '2026-01-01', 'Activo', '2026-01-01'),
+	(2, 2, 3, 'KDJ-823', 'Honda', '150', 'Rojo', 2026, '---', '2026-02-02', '2026-02-02', 'Activo', '2026-02-02'),
+	(3, 3, 2, 'XLW-104', 'Suzuki', '250', 'Azul', 2026, '---', '2026-03-03', '2026-03-03', 'Inactivo', '2026-03-03'),
+	(4, 1, 3, 'MLZ-234', 'Suzuki', '250', 'Azul', 2026, '---', '2026-03-03', '2026-03-03', 'Inactivo', '2026-03-03');
