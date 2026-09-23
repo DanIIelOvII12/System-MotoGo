@@ -1,0 +1,112 @@
+{
+  "tipo-documentos": [
+    {
+      "nombre": "Cedula de ciudadania",
+      "abreviatura": "CC",
+      "estado": "Activo",
+      "id": 1
+    },
+    {
+      "nombre": "Tarjeta de identidad",
+      "abreviatura": "TI",
+      "estado": "Activo",
+      "id": 2
+    },
+    {
+      "nombre": "Pasaporte",
+      "abreviatura": "PP",
+      "estado": true,
+      "id": 3
+    }
+  ],
+  "usuarios": [
+    {
+      "login": "DanielOvi12",
+      "correo": "danielovi1023.2@gmail.com",
+      "constrasenia": "123456",
+      "id": 1
+    },
+    {
+      "login": "Itachi y Caballo apariandose",
+      "correo": "ItachiCaballinpargays@gmail.com",
+      "constrasenia": "123456789",
+      "id": 2
+    },
+    {
+      "login": "Prueba",
+      "correo": "prueba@gmail.com",
+      "constrasenia": "123456789",
+      "id": 3
+    }
+  ],
+  "categoria-productos": [
+    {
+      "nombre": "Cascos",
+      "descripcion": "Cascos Nuevos",
+      "id": 1
+    },
+    {
+      "nombre": "Chaquetas",
+      "descripcion": "Chaquetas nuevas",
+      "id": 2
+    },
+    {
+      "nombre": "Aceites",
+      "descripcion": "Encuentra los mejores aceites",
+      "id": 3
+    }
+  ],
+  "tipo-vehiculos": [
+    {
+      "nombre": "Moto",
+      "activo": "Activo",
+      "id": 1
+    },
+    {
+      "nombre": "Carro",
+      "activo": "Inactivo",
+      "id": 2
+    }
+  ],
+  "metodo-pagos": [
+    {
+      "nombre": "Efectivo",
+      "id": 1
+    },
+    {
+      "nombre": "Nequi",
+      "id": 2
+    },
+    {
+      "nombre": "Tarjeta",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$43X2TN3Se/ltURBltxwrBeswAUi1eBywgZcy6GQWbY3nwJEHg1Ye2",
+      "id": 2
+    },
+    {
+      "email": "hola@gmail.com",
+      "password": "$2a$10$VJyWkB9J8jjdnDnRUudnpu8rJwJMbOdfVcm8LVfiGdB8z66TJOq/G",
+      "id": 3
+    },
+    {
+      "email": "hola2@gmail.com",
+      "password": "$2a$10$x7ymbBMO4B84wsQNacAFHOPsoABemzAOlH44LFqPtbNybXKk60mnW",
+      "id": 4
+    },
+    {
+      "email": "arreglo@gmail.com",
+      "password": "$2a$10$2kjAE2CEIM4hrhGj9QzHVeQxoPhCGFA1vNj4sxzxm.v8gVr6DkYby",
+      "id": 5
+    },
+    {
+      "email": "daniel@gmail.com",
+      "password": "$2a$10$EHaS544EUSz7eEXjIKAvW.yw8ytBnAy6hr4zoi.XKJpZxy8M8SeE2",
+      "id": 6
+    }
+  ]
+}
