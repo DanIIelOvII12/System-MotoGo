@@ -1063,3 +1063,5 @@ where id_pago = 2;
 
 delete from departamento
 where id_departamento = 3;
+
+select * from usuario;
