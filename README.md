@@ -55,8 +55,6 @@ El sistema permite a los usuarios realizar pedidos, gestionar productos, coordin
 ---
 
 
-### main
-
 Contiene versiones estables y aprobadas del proyecto.
 
 ### develop
@@ -74,13 +72,6 @@ Contiene funcionalidades específicas desarrolladas por cada integrante.
 
 En fase de análisis y diseño.
 
-Actualmente se están desarrollando:
-
-- Diagramas UML.
-- Modelado de base de datos.
-- Planificación del proyecto.
-
----
 
 # Equipo de Desarrollo
 
