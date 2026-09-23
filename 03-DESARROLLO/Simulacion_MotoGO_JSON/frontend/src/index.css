@@ -1,0 +1,1052 @@
+
+/* =========================================================
+   CONTENEDOR GENERAL
+   ========================================================= */
+
+.page-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================================
+   MENSAJE DE ERROR GENERAL
+   ========================================================= */
+
+.page-error {
+  background: rgba(225, 6, 0, 0.08);
+  color: #dc2626;
+  border: 1px solid rgba(225, 6, 0, 0.25);
+  border-left: 3px solid #dc2626;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+
+/* =========================================================
+   TARJETAS CRUD
+   ========================================================= */
+
+.crud-card {
+  background: #ffffff;
+  border: 1px solid #eef2f6;
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(2, 6, 23, 0.03);
+}
+
+.crud-card:last-child {
+  margin-bottom: 0;
+}
+
+.crud-card-title {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #111827;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+  border-left: 3px solid #dc2626;
+  padding-left: 10px;
+}
+
+/* =========================================================
+   FORMULARIOS
+   ========================================================= */
+
+.crud-form-grid {
+  display: grid;
+  gap: 14px;
+  align-items: end;
+}
+
+.crud-form-grid--documents {
+  grid-template-columns: 2fr 1fr 1fr auto;
+}
+
+.crud-form-grid--two-fields {
+  grid-template-columns: 1fr 2fr auto;
+}
+
+.crud-form-grid--vehicles {
+  grid-template-columns: 2fr 1fr auto;
+}
+
+.crud-form-grid--users {
+  grid-template-columns: 1fr 2fr 1fr auto;
+}
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.crud-field-input {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+
+  background: #f3f4f6;
+  color: #111827;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.crud-field-input:focus {
+  border-color: #dc2626;
+  background: #f9fafb;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.12);
+}
+
+.crud-field-input::placeholder {
+  color: #6b7280;
+}
+
+/* =========================================================
+   ACCIONES DE FORMULARIO
+   ========================================================= */
+
+.crud-actions {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+
+/* =========================================================
+   BOTONES CRUD
+   ========================================================= */
+
+.crud-button {
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.crud-button:hover {
+  background: #b80500;
+  box-shadow: 0 4px 10px rgba(225, 6, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.crud-button:active {
+  transform: translateY(0);
+}
+
+.crud-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   BUSCADOR
+   ========================================================= */
+
+.crud-search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.crud-search-input {
+  flex: 1;
+  padding: 12px;
+  box-sizing: border-box;
+
+  background: #f3f4f6;
+  color: #111827;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.crud-search-input:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.12);
+}
+
+.crud-search-input::placeholder {
+  color: #6b7280;
+}
+
+/* =========================================================
+   RESULTADO DE BÚSQUEDA
+   ========================================================= */
+
+.crud-search-result {
+  margin-top: 18px;
+
+  background: #ffffff;
+  color: #111111;
+
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #dc2626;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ENCABEZADO */
+
+.search-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 18px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  color: #111111;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.05em;
+}
+
+.search-result-id {
+  color: #dc2626;
+
+  font-size: 12px;
+}
+
+/* CUERPO */
+
+.search-result-body {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1px;
+
+  background: #e5e7eb;
+}
+
+/* CADA DATO */
+
+.search-result-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding: 16px 18px;
+
+  background: #ffffff;
+}
+
+.search-result-item span {
+  color: #6b7280;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.search-result-item strong {
+  color: #111111;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   HEADER DE LISTADO
+   ========================================================= */
+
+.crud-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+.crud-list-header h2,
+.crud-list-header h3 {
+  margin: 0;
+}
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.crud-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================================
+   CABECERA TABLA
+   ========================================================= */
+
+.crud-table-header {
+  text-align: left;
+
+  background: #111827;
+  color: #ffffff;
+
+  border-bottom: 1px solid #1f2937;
+
+  padding: 12px 10px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.crud-table-header--actions {
+  background: #111827;
+  color: #ffffff;
+
+  border-bottom: 1px solid #1f2937;
+
+  padding: 12px 10px;
+
+  text-align: center;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* =========================================================
+   CELDAS
+   ========================================================= */
+
+.crud-table-cell {
+  border-bottom: 1px solid #eef2f6;
+  padding: 11px 10px;
+
+  color: #111827;
+
+  font-size: 0.92rem;
+}
+
+.crud-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.crud-table tbody tr:hover {
+  background: rgba(225, 6, 0, 0.035);
+}
+
+.crud-table tbody tr:last-child .crud-table-cell {
+  border-bottom: none;
+}
+
+/* =========================================================
+   ACCIONES DE TABLA
+   ========================================================= */
+
+.crud-table-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.crud-table-action {
+  padding: 6px 11px;
+
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+
+  background: #f3f4f6;
+  color: #111827;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.crud-table-action:hover {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+/* =========================================================
+   LISTADO VACÍO
+   ========================================================= */
+
+.crud-empty {
+  padding: 20px;
+
+  text-align: center;
+
+  color: #6b7280;
+
+  background: #f3f4f6;
+
+  border-radius: 8px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login {
+  max-width: 420px;
+  margin: 70px auto;
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #eef2f6;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login h1 {
+  margin-bottom: 25px;
+  color: #111827;
+}
+
+.login__input {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0 16px;
+
+  box-sizing: border-box;
+
+  background: #f3f4f6;
+  color: #111827;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login__input:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.12);
+}
+
+.login__input::placeholder {
+  color: #6b7280;
+}
+
+.login__error {
+  color: #dc2626;
+
+  background: rgba(225, 6, 0, 0.08);
+
+  border-left: 3px solid #dc2626;
+
+  padding: 9px 10px;
+
+  margin-bottom: 15px;
+
+  border-radius: 4px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+}
+
+.login__button {
+  width: 100%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: normal;
+  text-transform: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.login__button:hover {
+  background: #b80500;
+  box-shadow: 0 5px 14px rgba(225, 6, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.login__button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   PAYMENT
+   ========================================================= */
+
+.payment-page {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.payment-add-button {
+  margin-bottom: 18px;
+
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+
+  text-transform: none;
+  letter-spacing: normal;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.payment-add-button:hover {
+  background: #b80500;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   TABLA PAYMENT
+   ========================================================= */
+
+.payment-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: #ffffff;
+
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.payment-table th {
+  background: #111827;
+  color: #ffffff;
+
+  padding: 12px;
+
+  text-align: left;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.payment-table td {
+  padding: 11px 12px;
+
+  border-bottom: 1px solid #eef2f6;
+
+  color: #111827;
+}
+
+.payment-table tbody tr:hover {
+  background: rgba(225, 6, 0, 0.035);
+}
+
+.payment-empty {
+  text-align: center;
+
+  padding: 25px;
+
+  color: #6b7280;
+}
+
+
+/* =========================================================
+   MODAL PAYMENT
+   ========================================================= */
+
+.payment-modal-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(15, 15, 15, 0.75);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+
+  padding: 20px;
+}
+
+.payment-modal {
+  background: #ffffff;
+  color: #111827;
+
+  padding: 28px;
+
+  border-radius: 12px;
+
+  width: 100%;
+  max-width: 450px;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+
+  border-top: 4px solid #dc2626;
+
+  animation: payment-modal-show 0.2s ease-out;
+}
+
+@keyframes payment-modal-show {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   CAMPOS PAYMENT
+   ========================================================= */
+
+.payment-field {
+  margin-bottom: 16px;
+}
+
+.payment-label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #111827;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.payment-input {
+  width: 100%;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  background: #f3f4f6;
+  color: #111827;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.payment-input:focus {
+  border-color: #dc2626;
+
+  box-shadow:
+    0 0 0 3px rgba(225, 6, 0, 0.12);
+}
+
+/* =========================================================
+   BOTONES MODAL
+   ========================================================= */
+
+.payment-modal-actions {
+  display: flex;
+
+  gap: 10px;
+
+  justify-content: flex-end;
+
+  margin-top: 20px;
+}
+
+.payment-modal-actions button {
+  padding: 9px 15px;
+
+  border-radius: 8px;
+
+  border: 1px solid #eef2f6;
+
+  background: #1f2937;
+  color: #ffffff;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.payment-modal-actions button:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   REGISTER
+   ========================================================= */
+
+.register {
+  max-width: 420px;
+
+  margin: 60px auto;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #eef2f6;
+
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register__title {
+  margin-bottom: 24px;
+
+  color: #111827;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  font-size: 2rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.03em;
+}
+
+.register__form {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.register__label {
+  margin-bottom: 3px;
+
+  color: #111827;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+}
+
+.register__input {
+  width: 100%;
+
+  padding: 12px;
+
+  margin: 6px 0 16px;
+
+  box-sizing: border-box;
+
+  background: #f3f4f6;
+
+  color: #111827;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.register__input:focus {
+  border-color: #dc2626;
+
+  box-shadow:
+    0 0 0 3px rgba(225, 6, 0, 0.12);
+}
+
+.register__input::placeholder {
+  color: #6b7280;
+}
+
+.register__error {
+  color: #dc2626;
+
+  background: rgba(225, 6, 0, 0.08);
+
+  border-left: 3px solid #dc2626;
+
+  padding: 9px 10px;
+
+  margin-bottom: 15px;
+
+  border-radius: 4px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  font-size: 0.9rem;
+}
+
+.register__button {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  letter-spacing: normal;
+
+  text-transform: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.register__button:hover {
+  background: #b80500;
+
+  box-shadow:
+    0 5px 14px rgba(225, 6, 0, 0.25);
+
+  transform: translateY(-1px);
+}
+
+.register__button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .crud-form-grid--documents,
+  .crud-form-grid--two-fields,
+  .crud-form-grid--vehicles,
+  .crud-form-grid--users {
+    grid-template-columns: 1fr;
+  }
+
+  .crud-actions {
+    align-items: stretch;
+  }
+
+  .crud-button {
+    width: 100%;
+  }
+
+  .crud-search-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .crud-search-input {
+    width: 100%;
+  }
+
+  .crud-list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .crud-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .payment-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .crud-table-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .page-container {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .crud-card {
+    padding: 16px;
+  }
+
+  .login,
+  .register {
+    margin: 30px 12px;
+    padding: 22px;
+  }
+
+  .payment-page {
+    padding: 12px;
+  }
+
+  .payment-modal {
+    padding: 20px;
+  }
+
+  .payment-modal-actions {
+    flex-direction: column;
+  }
+
+  .payment-modal-actions button {
+    width: 100%;
+  }
+}
