@@ -777,3 +777,177 @@ values
 	(2, 3, 2, 1, '2026-02-02', 'Pendiente'),
 	(3, 5, 1, 5, '2026-03-03', 'Se daño'),
 	(4, 5, 1, 2, '2026-04-04', 'Entregado');
+
+insert into factura
+	(id_factura, id_pedido, num_factura, fecha_emision, subtotal, impuestos, costo_envio, total, url_pdf)
+values
+	(1, 1, '01', '2026-01-01', '20.000', '1.000', '5.000', '26.000', null),
+	(2, 2, '02', '2026-02-02', '35.000', '2.500', '6.650', '44.150', null),
+	(3, 3, '03', '2026-03-03', '15.000', '0.000', '2.850', '17.850', null);
+
+
+
+--Registra las marcas de motocicletas disponibles.--
+
+insert into marca_moto 
+	(id_marca_moto, nombre) 
+values
+	(1, 'yamaha'),
+	(2, 'honda'),
+	(3, 'suzuki');
+
+--Registra los modelos de motocicletas y sus marcas.--
+
+insert into modelo_moto 
+	(id_modelo_moto, id_marca_moto, nombre_modelo, cilindraje) 
+values
+	(1, 1, 'bws', 125),
+	(2, 1, 'fz25', 249),
+	(3, 2, 'cb 125f', 124),
+	(4, 2, 'xre 300', 291),
+	(5, 3, 'gixxer', 155);
+
+--Registra la compatibilidad entre productos y modelos de motocicleta.--
+
+insert into compatibilidad_producto
+	(id_compatibilidad_producto, id_producto, id_modelo_moto)
+values
+	(1, 1, 1),
+	(2, 1, 3),
+	(3, 2, 4),
+	(4, 3, 2),
+	(5, 3, 5);
+
+
+--Registra los métodos de pago disponibles.--
+
+insert into metodo_pago
+	(id_metodo_pago, nombre)
+values
+	(1, 'Nequi'),
+	(2, 'BanColombia'),
+	(3, 'Davivienda'),
+	(4, 'Banco Caja Social'),
+	(5, 'PSE'),
+	(6, 'Efectivo');
+
+
+--Registra los pagos realizados para los pedidos.--
+
+insert into pago
+	(id_pago, id_metodo_pago, id_pedido,referencia_pago, 
+	valor_pagado, fecha_pago, estado_pago, observaciones)
+values
+	(1, 1, 1, '0001', '20.000', '2026-01-01', 'Recibido', null),
+	(2, 2, 2, '0002', '44.150', '2026-02-02', 'Recibido', null),
+	(3, 5, 3, '0003', '17.850', '2026-03-03', 'Error', null),
+	(4, 6, 4, '0004', '62.500', '2026-04-04', 'Error', null);
+
+
+
+-- INNER JOIN
+
+-- Esta consulta relaciona los clientes con sus direcciones mediante el id_cliente.
+-- Muestra el nombre y teléfono del cliente junto con la dirección reg  istrada.
+
+select
+	c.nombres,
+	c.telefono,
+	d.direccion
+from
+	cliente c
+inner join direccion d on c.id_cliente = d.id_cliente;
+
+
+-- Esta consulta relaciona al cliente con su carrito, los detalles del carrito, los productos publicados por las tiendas y finalmente el nombre del producto.
+-- Permite ver qué productos están asociados al carrito de cada cliente.
+select
+	c.id_cliente,
+	c.nombres,
+	ca.id_carrito,
+	cade.id_carrito_detalle,
+  	p.nombre
+from
+	cliente c
+inner join carrito ca on c.id_cliente = ca.id_cliente
+inner join carrito_detalle cade on ca.id_carrito = cade.id_carrito
+inner join tienda_producto tp on cade.id_tienda_producto = tp.id_tienda_producto
+inner join producto p on tp.id_producto = p.id_producto;
+
+
+-- Esta consulta relaciona al cliente con su registro como repartidor y con los vehículos que tiene registrados.
+-- Permite mostrar qué vehículo está asociado a cada repartidor.
+select
+	c.nombres,
+	c.id_cliente,
+	r.id_repartidor,
+	v.id_vehiculo,
+	v.marca
+from
+	cliente c
+inner join repartidor r on c.id_cliente = r.id_cliente
+inner join vehiculo v on r.id_repartidor = v.id_repartidor;
+
+
+-- Esta consulta relaciona al cliente con su carrito, los detalles del carrito,  los productos publicados por las tiendas y la información del producto.
+-- Muestra la cantidad, subtotal, tienda, precio y nombre del producto.
+select
+	c.nombres,
+	ca.id_carrito,
+	cade.cantidad,
+	cade.subtotal,
+	tipr.id_tienda,
+	tipr.precio,
+	p.nombre
+from
+	cliente c
+inner join carrito ca on c.id_cliente = ca.id_cliente
+inner join carrito_detalle cade on ca.id_carrito = cade.id_carrito
+inner join tienda_producto tipr on cade.id_tienda_producto = tipr.id_tienda_producto
+inner join producto p on tipr.id_producto = p.id_producto;
+	
+
+-- Esta consulta relaciona la información de usuario con la información del cliente.
+--Permite mostrar los datos de acceso del usuario junto con el nombre y teléfono del cliente.
+select
+	u.id_usuario,
+	u.login,
+	u.correo,
+	c.nombres,
+	c.telefono
+from
+	cliente c
+inner join usuario u on c.id_cliente = u.id_usuario;
+
+	
+-- Consultas
+
+-- Esta consulta muestra los nombres y teléfonos de los clientes que actualmente tienen el campo activo con el valor 'Activo'.
+	
+select nombres, telefono
+from cliente c
+where activo = 'Activo';
+
+
+-- Esta consulta muestra los subtotales de los detalles del carrito cuyo valor es mayor que 10.000.
+select subtotal
+from carrito_detalle cd 
+where cd.subtotal > 10.000;
+
+
+-- Esta consulta muestra el total de las facturas en las que el subtotal es menor o igual al total facturado.
+select total
+from factura f 
+where f.subtotal <= f.total ;
+
+
+-- Esta consulta muestra el nombre, referencia, marca y descripción de los productos y los ordena alfabéticamente según la marca.
+select nombre, referencia, marca, descripcion
+from producto p
+order by marca asc;
+	
+
+-- Esta consulta muestra el precio, stock y días de garantía de los productos publicados cuya garantía es de 90 días o menos.
+select precio, stock, garantia_dias 
+from tienda_producto tp 
+where tp.garantia_dias <= 90;
